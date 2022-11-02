@@ -6,3 +6,9 @@
     color: red;
 
 }
+.none{
+    display: none;
+}
+.EditV{
+    display:flex;
+}

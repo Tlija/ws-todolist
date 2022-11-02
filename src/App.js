@@ -37,13 +37,20 @@ class App extends Component {
     this.setState({
       filterList: statue,
     });
+
   };
+  handelEdit =(id,Newvalue)=>{
+    this.setState({list:this.state.list.map(
+      (el)=>el.id==id?{...el,name:Newvalue}:el
+    )})
+  }
   render() {
     return (
       <div className="App">
         <AddTask HandelAdd={this.HandelAdd.bind(this)} />
         <FilterTask handleFilter={this.handleFilter} />
         <Todoliste
+        handelEdit={this.handelEdit}
           list={this.state.filterList=='Done'?this.state.list.filter(
             (el)=>el.isdone
           ):
